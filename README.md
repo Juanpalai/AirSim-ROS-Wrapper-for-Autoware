@@ -21,7 +21,9 @@ The below steps are meant for Linux. If you're running AirSim on Windows, you ca
 - Ubuntu 20.04
     * Install [ROS noetic](https://wiki.ros.org/noetic/Installation/Ubuntu)
     * Install tf2 sensor and mavros packages: `sudo apt-get install ros-noetic-tf2-sensor-msgs ros-noetic-tf2-geometry-msgs ros-noetic-mavros*`
-
+- Ubuntu 20.04 ROS2
+    * Install [ROS2 Foxy](https://docs.ros.org/en/foxy/Installation.html) or [ROS2 Galactic](https://docs.ros.org/en/galactic/Installation.html)
+    * Install tf2 sensor and mavros packages: `sudo apt-get install ros-${ROS_DISTRO}-tf2-sensor-msgs ros-${ROS_DISTRO}-tf2-geometry-msgs ros-${ROS_DISTRO}-mavros* libyaml-cpp-dev`
 - Install [catkin_tools](https://catkin-tools.readthedocs.io/en/latest/installing.html)
     `sudo apt-get install python-catkin-tools` or
     `pip install catkin_tools`. If using Ubuntu 20.04 use `pip install "git+https://github.com/catkin/catkin_tools.git#egg=catkin_tools"`
@@ -51,6 +53,13 @@ source ~/.bashrc
 git clone https://github.com/Juanpalai/AirSim-ROS-Wrapper-for-Autoware.git;
 cp -r PATH_TO/AirSim-ROS-Wrapper-for-Autoware/ros PATH_TO/AirSim/
 cp -r PATH_TO/AirSim-ROS-Wrapper-for-Autoware/ros2 PATH_TO/AirSim/
+```
+
+
+
+# ROS
+
+```shell
 cd PATH_TO/AirSim;
 cd ros;
 catkin build; # or catkin_make
@@ -70,6 +79,24 @@ roslaunch airsim_ros_pkgs airsim_node.launch;
 ```
 
    **Note**: If you get an error running `roslaunch airsim_ros_pkgs airsim_node.launch`, run `catkin clean` and try again
+
+
+# ROS2
+
+Verify you have [Colcon](https://colcon.readthedocs.io/en/released/user/installation.html) installed, if not - install it
+
+```shell
+cd PATH_TO/AirSim;
+cd ros2;
+colcon build --cmake-args -DCMAKE_C_COMPILER=gcc-8 --cmake-args -DCMAKE_CXX_COMPILER=g++-8 --cmake-args -DCMAKE_BUILD_TYPE=Debug; # or for release DCMAKE_BUILD_TYPE=Release
+```
+
+## Running
+
+```shell
+source install/setup.bash;
+ros2 launch airsim_ros_pkgs airsim_node.launch.py;
+```
 
 ## Using AirSim ROS wrapper
 
