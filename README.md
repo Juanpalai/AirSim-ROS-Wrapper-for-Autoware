@@ -57,7 +57,7 @@ cp -r PATH_TO/AirSim-ROS-Wrapper-for-Autoware/ros2 PATH_TO/AirSim/
 
 
 
-# ROS
+### ROS
 
 ```shell
 cd PATH_TO/AirSim;
@@ -81,7 +81,7 @@ roslaunch airsim_ros_pkgs airsim_node.launch;
    **Note**: If you get an error running `roslaunch airsim_ros_pkgs airsim_node.launch`, run `catkin clean` and try again
 
 
-# ROS2
+### ROS2
 
 Verify you have [Colcon](https://colcon.readthedocs.io/en/released/user/installation.html) installed, if not - install it
 
