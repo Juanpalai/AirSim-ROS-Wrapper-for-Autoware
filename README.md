@@ -2,8 +2,8 @@
 
 Modified ROS packages for AirSim to integrate with Autoware.
 
-<img src="screenshots/AirismUnreal.png" alt="Airism Unreal Screenshot" width="400" height="200">
-<img src="screenshots/Autoware1.png" alt="Autoware Screenshot" width="400" height="200">
+<img src="https://cdn.glitch.me/4cca95d7-5082-4e5c-8e1f-aea9cec38165/atacksong.jpg" alt="Airism Unreal Screenshot" width="300" height="150">
+<img src="https://cdn.glitch.me/4cca95d7-5082-4e5c-8e1f-aea9cec38165/BookTower.jpg" alt="Autoware Screenshot" width="300" height="150">
 
 
 ## Setup
