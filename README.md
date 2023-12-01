@@ -55,7 +55,9 @@ cp -r PATH_TO/AirSim-ROS-Wrapper-for-Autoware/ros PATH_TO/AirSim/
 cp -r PATH_TO/AirSim-ROS-Wrapper-for-Autoware/ros2 PATH_TO/AirSim/
 ```
 
+## AirSim Settings
 
+- Within the repository, you will find the "Settings" folder containing the recommended settings to test the ROS package.
 
 ### ROS
 
@@ -97,6 +99,9 @@ colcon build --cmake-args -DCMAKE_C_COMPILER=gcc-8 --cmake-args -DCMAKE_CXX_COMP
 source install/setup.bash;
 ros2 launch airsim_ros_pkgs airsim_node.launch.py;
 ```
+# NOTE
+
+-In the recommended settings for this setup, utilizing four distinct lidars positioned in close proximity is advised to enhance the points-per-second output of the lidar and thereby improve object detection results. It is recommended to integrate them using the "points_concat_filter" node provided by Autoware.
 
 ## Using AirSim ROS wrapper
 
