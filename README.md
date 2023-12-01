@@ -2,6 +2,10 @@
 
 Modified ROS packages for AirSim to integrate with Autoware.
 
+<img src="screenshots/AirismUnreal.png" alt="Airism Unreal Screenshot" width="400" height="200">
+<img src="screenshots/Autoware1.png" alt="Autoware Screenshot" width="400" height="200">
+
+
 ## Setup
 
 The below steps are meant for Linux. If you're running AirSim on Windows, you can use Windows Subsystem for Linux (WSL) to run the ROS wrapper, see the instructions [below](#setting-up-the-build-environment-on-windows10-using-wsl1-or-wsl2). If you're unable or don't prefer to install ROS and related tools on your host Linux due to some issues, you can also try it using Docker, see the steps in [Using Docker for ROS wrapper](#using-docker-for-ros)
@@ -101,7 +105,7 @@ ros2 launch airsim_ros_pkgs airsim_node.launch.py;
 ```
 # NOTE
 
--In the recommended settings for this setup, utilizing four distinct lidars positioned in close proximity is advised to enhance the points-per-second output of the lidar and thereby improve object detection results. It is recommended to integrate them using the "points_concat_filter" node provided by Autoware.
+In the recommended settings for this configuration, utilizing four distinct lidars positioned at the same location is advised. To consolidate them and enhance the point-per-second data quality of the lidar for improved object detection results, it is recommended to use the "points_concat_filter" node provided by Autoware.
 
 ## Using AirSim ROS wrapper
 
@@ -129,10 +133,10 @@ Odometry in NED frame (default name: odom_local_ned, launch name and frame type 
 - `/tf` [tf2_msgs/TFMessage](https://docs.ros.org/api/tf2_msgs/html/msg/TFMessage.html)
 
 - `/airsim_node/VEHICLE_NAME/altimeter/SENSOR_NAME` [airsim_ros_pkgs/Altimeter](https://github.com/microsoft/AirSim/blob/main/ros/src/airsim_ros_pkgs/msg/Altimeter.msg)
-This the current altimeter reading for altitude, pressure, and [QNH](https://en.wikipedia.org/wiki/QNH)
+  This the current altimeter reading for altitude, pressure, and [QNH](https://en.wikipedia.org/wiki/QNH)
 
 - `/airsim_node/VEHICLE_NAME/imu/SENSOR_NAME` [sensor_msgs::Imu](http://docs.ros.org/api/sensor_msgs/html/msg/Imu.html)
-IMU sensor data
+  IMU sensor data
 
 - `/airsim_node/VEHICLE_NAME/magnetometer/SENSOR_NAME` [sensor_msgs::MagneticField](http://docs.ros.org/api/sensor_msgs/html/msg/MagneticField.html)
   Meausrement of magnetic field vector/compass
@@ -142,6 +146,9 @@ IMU sensor data
 
 - `/airsim_node/VEHICLE_NAME/lidar/SENSOR_NAME` [sensor_msgs::PointCloud2](http://docs.ros.org/api/sensor_msgs/html/msg/PointCloud2.html)
   LIDAR pointcloud
+
+- `/airsim_node/current_velocity"` [geometry_msgs::TwistStamped](https://docs.ros.org/en/jade/api/geometry_msgs/html/msg/TwistStamped.html)
+  Vehicle speed given in meters per second.
 
 #### Subscribers:
 
