@@ -1,6 +1,6 @@
 # AirSim-ROS-Wrapper-for-Autoware
 
-Modified ROS packages for AirSim to integrate with Autoware.
+Modified ROS packages to integrate Microsoft AirSim, a high-fidelity simulator for autonomous vehicles, with Autoware, an open-source self-driving car platform.
 
 <img src="screenshots/AirismUnreal.png" alt="Airism Unreal Screenshot" width="400" height="200">
 <img src="screenshots/Autoware1.png" alt="Autoware Screenshot" width="400" height="200">
