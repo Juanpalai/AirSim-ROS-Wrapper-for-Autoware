@@ -340,7 +340,7 @@ roslaunch airsim_ros_pkgs rviz.launch
 
 ### Using Docker for ROS
 
-A Dockerfile is present in the [`tools`](https://github.com/microsoft/AirSim/tree/main/tools/Dockerfile-ROS) directory. To build the `airsim-ros` image -
+A Dockerfile is present in the [`tools`](https://github.com/Juanpalai/AirSim-ROS-Wrapper-for-Autoware/blob/main/tools/Dockerfile-ROS) directory. To build the `airsim-ros` image -
 
 ```shell
 cd tools
